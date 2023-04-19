@@ -26,7 +26,7 @@ export default function TextEditor() {
     console.log(documentId);
 
     useEffect(() => {
-        const s = io("http://localhost:3005", {
+        const s = io("https://texteditor-av.onrender.com", {
             extraHeaders: {
                 "Access-Control-Allow-Origin": "*"
             }
