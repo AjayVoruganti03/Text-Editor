@@ -5,20 +5,24 @@ import {
   Route,
   Redirect,
 } from "react-router-dom"
-import { v4 as uuidV4 } from "uuid"
+// import { v4 as uuidV4 } from "uuid"
 
 function App() {
+
+  const documentId = "texteditor";
+
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact>
-          <Redirect to={`/documents/${uuidV4()}`} />
-        </Route>
-        <Route path="/documents/:id">
-          <TextEditor />
-        </Route>
-      </Switch>
-    </Router>
+    <Switch>
+      <Route path="/" exact>
+        {/* Always redirect to the same document */}
+        <Redirect to={`/documents/${documentId}`} />
+      </Route>
+      <Route path="/documents/:id">
+        <TextEditor />
+      </Route>
+    </Switch>
+  </Router>
   )
 }
 
